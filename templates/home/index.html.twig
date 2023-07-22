@@ -1,0 +1,675 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <div class="flex justify-center mt-6">
+        <a class="btn btn-sm btn-ghost mx-2">Vidéos</a>
+        <a class="btn btn-sm btn-ghost mx-2">Tags</a>
+        <a class="btn btn-sm btn-ghost mx-2">Top créateurs</a>
+        <a class="btn btn-sm btn-ghost mx-2">Articles</a>
+        <a class="btn btn-sm btn-ghost mx-2">Podcasts</a>
+        <a class="btn btn-sm btn-ghost mx-2">Formations</a>
+        <a class="btn btn-sm btn-ghost mx-2">Evenements</a>
+    </div>
+
+    <div class="section-heading style-2 mb-7 w-full mt-10">
+        <h1 class="text-3xl mb-2">
+            <i class="fa-brands fa-youtube text-tutomarkspurple mr-3"></i>Dernières Vidéos
+        </h1>
+        <div class="line"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 place-items-stretch">
+        <div class="card bg-base-100 shadow-md" data-theme="winter">
+            <img src="https://picsum.photos/640/480?random=1" class="rounded-tl-box rounded-tr-box" alt="Shoes" />
+            <div class="card-body">
+                <h2 class="card-title text-base">
+                    Install Docker + Traefik (HTTPS)👌+ URL Extérieur HA , Fri...
+                </h2>
+                <p>Raynox</p>
+                <div class="card-actions justify-end">
+                    <div class="badge text-xs badge-secondary">NEW</div>
+                    <div class="badge text-xs badge-primary">Fr</div>
+                    <div class="badge text-xs badge-outline">Proxmox</div>
+                    <div class="badge text-xs badge-outline">Docker</div>
+                    <div class="badge text-xs badge-outline">Traefik</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md" data-theme="winter">
+            <img src="https://picsum.photos/640/480?random=2" class="rounded-tl-box rounded-tr-box" alt="Shoes" />
+            <div class="card-body">
+                <h2 class="card-title text-base">
+                    Install Docker + Traefik (HTTPS)👌+ URL Extérieur HA , Fri...
+                </h2>
+                <p>Raynox</p>
+                <div class="card-actions justify-end">
+                    <div class="badge text-xs badge-secondary">NEW</div>
+                    <div class="badge text-xs badge-primary">Fr</div>
+                    <div class="badge text-xs badge-outline">Proxmox</div>
+                    <div class="badge text-xs badge-outline">Docker</div>
+                    <div class="badge text-xs badge-outline">Traefik</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md" data-theme="winter">
+            <img src="https://picsum.photos/640/480?random=3" class="rounded-tl-box rounded-tr-box" alt="Shoes" />
+            <div class="card-body">
+                <h2 class="card-title text-base">
+                    Install Docker + Traefik (HTTPS)👌+ URL Extérieur HA , Fri...
+                </h2>
+                <p>Raynox</p>
+                <div class="card-actions justify-end">
+                    <div class="badge text-xs badge-secondary">NEW</div>
+                    <div class="badge text-xs badge-primary">Fr</div>
+                    <div class="badge text-xs badge-outline">Proxmox</div>
+                    <div class="badge text-xs badge-outline">Docker</div>
+                    <div class="badge text-xs badge-outline">Traefik</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md" data-theme="winter">
+            <img src="https://picsum.photos/640/480?random=4" class="rounded-tl-box rounded-tr-box" alt="Shoes" />
+            <div class="card-body">
+                <h2 class="card-title text-base">
+                    Install Docker + Traefik (HTTPS)👌+ URL Extérieur HA , Fri...
+                </h2>
+                <p>Raynox</p>
+                <div class="card-actions justify-end">
+                    <div class="badge text-xs badge-secondary">NEW</div>
+                    <div class="badge text-xs badge-primary">Fr</div>
+                    <div class="badge text-xs badge-outline">Proxmox</div>
+                    <div class="badge text-xs badge-outline">Docker</div>
+                    <div class="badge text-xs badge-outline">Traefik</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md" data-theme="winter">
+            <img src="https://picsum.photos/640/480?random=5" class="rounded-tl-box rounded-tr-box" alt="Shoes" />
+            <div class="card-body">
+                <h2 class="card-title text-base">
+                    Install Docker + Traefik (HTTPS)👌+ URL Extérieur HA , Fri...
+                </h2>
+                <p>Raynox</p>
+                <div class="card-actions justify-end">
+                    <div class="badge text-xs badge-secondary">NEW</div>
+                    <div class="badge text-xs badge-primary">Fr</div>
+                    <div class="badge text-xs badge-outline">Proxmox</div>
+                    <div class="badge text-xs badge-outline">Docker</div>
+                    <div class="badge text-xs badge-outline">Traefik</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md" data-theme="winter">
+            <img src="https://picsum.photos/640/480?random=6" class="rounded-tl-box rounded-tr-box" alt="Shoes" />
+            <div class="card-body">
+                <h2 class="card-title text-base">
+                    Install Docker + Traefik (HTTPS)👌+ URL Extérieur HA , Fri...
+                </h2>
+                <p>Raynox</p>
+                <div class="card-actions justify-end">
+                    <div class="badge text-xs badge-secondary">NEW</div>
+                    <div class="badge text-xs badge-primary">Fr</div>
+                    <div class="badge text-xs badge-outline">Proxmox</div>
+                    <div class="badge text-xs badge-outline">Docker</div>
+                    <div class="badge text-xs badge-outline">Traefik</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md" data-theme="winter">
+            <img src="https://picsum.photos/640/480?random=7" class="rounded-tl-box rounded-tr-box" alt="Shoes" />
+            <div class="card-body">
+                <h2 class="card-title text-base">
+                    Install Docker + Traefik (HTTPS)👌+ URL Extérieur HA , Fri...
+                </h2>
+                <p>Raynox</p>
+                <div class="card-actions justify-end">
+                    <div class="badge text-xs badge-secondary">NEW</div>
+                    <div class="badge text-xs badge-outline">Fr</div>
+                    <div class="badge text-xs badge-outline">Proxmox</div>
+                    <div class="badge text-xs badge-outline">Docker</div>
+                    <div class="badge text-xs badge-outline">Traefik</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md" data-theme="winter">
+            <img src="https://picsum.photos/640/480?random=8" class="rounded-tl-box rounded-tr-box" alt="Shoes" />
+            <div class="card-body">
+                <h2 class="card-title text-base">
+                    Install Docker + Traefik (HTTPS)👌+ URL Extérieur HA , Fri...
+                </h2>
+                <p>Raynox</p>
+                <div class="card-actions justify-end">
+                    <div class="badge text-xs badge-secondary">NEW</div>
+                    <div class="badge text-xs badge-outline">Fr</div>
+                    <div class="badge text-xs badge-outline">Proxmox</div>
+                    <div class="badge text-xs badge-outline">Docker</div>
+                    <div class="badge text-xs badge-outline">Traefik</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="flex justify-center w-full border-b-2 border-current text-slate-300 hover:text-accent mt-6" href="#">
+        Plus de vidéos
+    </a>
+
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-10">
+        <div class="w-full lg:col-span-2">
+            <div class="section-heading style-2 mb-7 w-full mt-10">
+                <h1 class="text-3xl mb-2">
+                    <i class="fa-solid fa-graduation-cap text-tutomarkspurple mr-3"></i>Tops créateurs
+                </h1>
+                <div class="line"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="card card-side bg-gradient-to-t from-purple-100 to-blue-100 shadow-sm p-2 items-center gap-3 rounded-lg" data-theme="winter">
+                    <figure>
+                        <img src="https://picsum.photos/88/88?random=5" alt="Movie" class="rounded-lg" />
+                    </figure>
+                    <div class="card-body flex-grow">
+                        <h2 class="card-title text-base">
+                           Les Compagnons du DevOps
+                        </h2>
+                        <div class="card-actions flex justify-between items-center">
+                            <div class="flex justify-start">
+                                <button class="btn glass btn-sm me-1"><i class="fa-brands fa-youtube"></i></button>
+                                <button class="btn glass btn-sm me-1">Tw</button>
+                                <button class="btn glass btn-sm me-1">Si</button>
+                                <button class="btn glass btn-sm me-1">Gi</button>
+                            </div>
+                            <span class="badge text-xs badge-accent badge-sm">89 partages</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-side bg-gradient-to-t from-purple-100 to-blue-100 shadow-sm p-2 items-center gap-3 rounded-lg" data-theme="winter">
+                    <figure>
+                        <img src="https://picsum.photos/88/88?random=5" alt="Movie" class="rounded-lg" />
+                    </figure>
+                    <div class="card-body flex-grow">
+                        <h2 class="card-title text-base">
+                            Les Compagnons du DevOps
+                        </h2>
+                        <div class="card-actions flex justify-between items-center">
+                            <div class="flex justify-start">
+                                <button class="btn glass btn-sm me-1"><i class="fa-brands fa-youtube"></i></button>
+                                <button class="btn glass btn-sm me-1">Tw</button>
+                                <button class="btn glass btn-sm me-1">Si</button>
+                                <button class="btn glass btn-sm me-1">Gi</button>
+                            </div>
+                            <span class="badge text-xs badge-accent badge-sm">89 partages</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-side bg-gradient-to-t from-purple-100 to-blue-100 shadow-sm p-2 items-center gap-3 rounded-lg" data-theme="winter">
+                    <figure>
+                        <img src="https://picsum.photos/88/88?random=5" alt="Movie" class="rounded-lg" />
+                    </figure>
+                    <div class="card-body flex-grow">
+                        <h2 class="card-title text-base">
+                            Les Compagnons du DevOps
+                        </h2>
+                        <div class="card-actions flex justify-between items-center">
+                            <div class="flex justify-start">
+                                <button class="btn glass btn-sm me-1"><i class="fa-brands fa-youtube"></i></button>
+                                <button class="btn glass btn-sm me-1">Tw</button>
+                                <button class="btn glass btn-sm me-1">Si</button>
+                                <button class="btn glass btn-sm me-1">Gi</button>
+                            </div>
+                            <span class="badge text-xs badge-accent badge-sm">89 partages</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-side bg-gradient-to-t from-purple-100 to-blue-100 shadow-sm p-2 items-center gap-3 rounded-lg" data-theme="winter">
+                    <figure>
+                        <img src="https://picsum.photos/88/88?random=5" alt="Movie" class="rounded-lg" />
+                    </figure>
+                    <div class="card-body flex-grow">
+                        <h2 class="card-title text-base">
+                            Les Compagnons du DevOps
+                        </h2>
+                        <div class="card-actions flex justify-between items-center">
+                            <div class="flex justify-start">
+                                <button class="btn glass btn-sm me-1"><i class="fa-brands fa-youtube"></i></button>
+                                <button class="btn glass btn-sm me-1">Tw</button>
+                                <button class="btn glass btn-sm me-1">Si</button>
+                                <button class="btn glass btn-sm me-1">Gi</button>
+                            </div>
+                            <span class="badge text-xs badge-accent badge-sm">89 partages</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-side bg-gradient-to-t from-purple-100 to-blue-100 shadow-sm p-2 items-center gap-3 rounded-lg" data-theme="winter">
+                    <figure>
+                        <img src="https://picsum.photos/88/88?random=5" alt="Movie" class="rounded-lg" />
+                    </figure>
+                    <div class="card-body flex-grow">
+                        <h2 class="card-title text-base">
+                            Les Compagnons du DevOps
+                        </h2>
+                        <div class="card-actions flex justify-between items-center">
+                            <div class="flex justify-start">
+                                <button class="btn glass btn-sm me-1"><i class="fa-brands fa-youtube"></i></button>
+                                <button class="btn glass btn-sm me-1">Tw</button>
+                                <button class="btn glass btn-sm me-1">Si</button>
+                                <button class="btn glass btn-sm me-1">Gi</button>
+                            </div>
+                            <span class="badge text-xs badge-accent badge-sm">89 partages</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-side bg-gradient-to-t from-purple-100 to-blue-100 shadow-sm p-2 items-center gap-3 rounded-lg" data-theme="winter">
+                    <figure>
+                        <img src="https://picsum.photos/88/88?random=5" alt="Movie" class="rounded-lg" />
+                    </figure>
+                    <div class="card-body flex-grow">
+                        <h2 class="card-title text-base">
+                            Les Compagnons du DevOps
+                        </h2>
+                        <div class="card-actions flex justify-between items-center">
+                            <div class="flex justify-start">
+                                <button class="btn glass btn-sm me-1"><i class="fa-brands fa-youtube"></i></button>
+                                <button class="btn glass btn-sm me-1">Tw</button>
+                                <button class="btn glass btn-sm me-1">Si</button>
+                                <button class="btn glass btn-sm me-1">Gi</button>
+                            </div>
+                            <span class="badge text-xs badge-accent badge-sm">89 partages</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="flex justify-center w-full border-b-2 border-current text-slate-300 hover:text-accent mt-6" href="#">
+                Plus de créateurs
+            </a>
+        </div>
+
+        <div class="w-full">
+            <div class="flex flex-col gap-3 mb-7">
+                <div class="stats shadow-md overflow-hidden" data-theme="winter">
+                    <div class="stat text-center">
+                        <div class="text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <div class="stat-value text-xl/8">750</div>
+                        <div class="stat-title text-sm">Vidéos</div>
+                    </div>
+
+                    <div class="stat text-center">
+                        <div class="text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <div class="stat-value text-xl/8">750</div>
+                        <div class="stat-title text-sm">Vidéos</div>
+                    </div>
+
+                    <div class="stat text-center">
+                        <div class="text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <div class="stat-value text-xl/8">750</div>
+                        <div class="stat-title text-sm">Vidéos</div>
+                    </div>
+                </div>
+
+                <div class="stats shadow-md overflow-hidden" data-theme="winter">
+                    <div class="stat text-center">
+                        <div class="text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <div class="stat-value text-xl/8">750</div>
+                        <div class="stat-title text-sm">Vidéos</div>
+                    </div>
+
+                    <div class="stat text-center">
+                        <div class="text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <div class="stat-value text-xl/8">750</div>
+                        <div class="stat-title text-sm">Vidéos</div>
+                    </div>
+
+                    <div class="stat text-center">
+                        <div class="text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <div class="stat-value text-xl/8">750</div>
+                        <div class="stat-title text-sm">Vidéos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-heading style-2 mb-7 w-full mt-10">
+                <h1 class="text-3xl mb-2">
+                    <i class="fa-solid fa-screwdriver-wrench text-tutomarkspurple mr-3"></i>Boite à outils
+                </h1>
+                <div class="line"></div>
+            </div>
+
+            <div class="card bg-base-100 shadow-md w-full">
+                <div class="card-body">
+                    <h2 class="card-title text-base">Les 20 comptes Twitter à suivre pour les développeurs</h2>
+                    <p class="text-sm">HappyToDev</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-secondary">NEW</div>
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-outline">Proxmox</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div class="card-body">
+                    <h2 class="card-title text-base">Les 20 comptes Twitter à suivre pour les développeurs</h2>
+                    <p class="text-sm">HappyToDev</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-outline">Proxmox</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div class="card-body">
+                    <h2 class="card-title text-base">Les 20 comptes Twitter à suivre pour les développeurs</h2>
+                    <p class="text-sm">HappyToDev</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-outline">Proxmox</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="flex justify-center w-full border-b-2 border-current text-slate-300 hover:text-accent mt-4" href="#">
+                Plus d'outils
+            </a>
+        </div>
+    </div>
+
+    <div class="w-full mt-10">
+        <div class="section-heading style-2 mb-7 w-full mt-10">
+            <h1 class="text-3xl mb-2">
+                <i class="fa-solid fa-newspaper text-tutomarkspurple mr-3"></i>Dernières ressources
+            </h1>
+            <div class="line"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="card card-side bg-base-100 shadow-md" data-theme="winter">
+                <img src="https://picsum.photos/640/480?random=1" class="rounded-tl-box rounded-bl-box w-52" alt="Shoes" />
+                <div class="card-body">
+                    <h2 class="card-title text-base">Quoi de neuf les devs ? Numéro #42</h2>
+                    <p class="text-sm">HappyToDev</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-secondary">Article</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-side bg-base-100 shadow-md" data-theme="winter">
+                <img src="https://picsum.photos/640/480?random=2" class="rounded-tl-box rounded-bl-box w-52" alt="Shoes" />
+                <div class="card-body">
+                    <h2 class="card-title text-base">Podcast #67 - 7 choses que vous ignorez sur JavaScript</h2>
+                    <p class="text-sm">Nicolas Brodin-Bernard</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-accent">Podcast</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-side bg-base-100 shadow-md" data-theme="winter">
+                <img src="https://picsum.photos/640/480?random=3" class="rounded-tl-box rounded-bl-box w-52" alt="Shoes" />
+                <div class="card-body">
+                    <h2 class="card-title text-base">Quoi de neuf les devs ? Numéro #42</h2>
+                    <p class="text-sm">HappyToDev</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-secondary">Article</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-side bg-base-100 shadow-md" data-theme="winter">
+                <img src="https://picsum.photos/640/480?random=4" class="rounded-tl-box rounded-bl-box w-52" alt="Shoes" />
+                <div class="card-body">
+                    <h2 class="card-title text-base">Podcast #67 - 7 choses que vous ignorez sur JavaScript</h2>
+                    <p class="text-sm">Nicolas Brodin-Bernard</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-accent">Podcast</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-side bg-base-100 shadow-md" data-theme="winter">
+                <img src="https://picsum.photos/640/480?random=5" class="rounded-tl-box rounded-bl-box w-52" alt="Shoes" />
+                <div class="card-body">
+                    <h2 class="card-title text-base">Podcast #67 - 7 choses que vous ignorez sur JavaScript</h2>
+                    <p class="text-sm">Nicolas Brodin-Bernard</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-accent">Podcast</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-side bg-base-100 shadow-md" data-theme="winter">
+                <img src="https://picsum.photos/640/480?random=6" class="rounded-tl-box rounded-bl-box w-52" alt="Shoes" />
+                <div class="card-body">
+                    <h2 class="card-title text-base">Quoi de neuf les devs ? Numéro #42</h2>
+                    <p class="text-sm">HappyToDev</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-secondary">Article</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-side bg-base-100 shadow-md" data-theme="winter">
+                <img src="https://picsum.photos/640/480?random=7" class="rounded-tl-box rounded-bl-box w-52" alt="Shoes" />
+                <div class="card-body">
+                    <h2 class="card-title text-base">Quoi de neuf les devs ? Numéro #42</h2>
+                    <p class="text-sm">HappyToDev</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-secondary">Article</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-side bg-base-100 shadow-md" data-theme="winter">
+                <img src="https://picsum.photos/640/480?random=8" class="rounded-tl-box rounded-bl-box w-52" alt="Shoes" />
+                <div class="card-body">
+                    <h2 class="card-title text-base">Podcast #67 - 7 choses que vous ignorez sur JavaScript</h2>
+                    <p class="text-sm">Nicolas Brodin-Bernard</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-primary">Fr</div>
+                        <div class="badge text-xs badge-accent">Podcast</div>
+                        <div class="badge text-xs badge-outline">Docker</div>
+                        <div class="badge text-xs badge-outline">Traefik</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="flex justify-center w-full border-b-2 border-current text-slate-300 hover:text-accent mt-6" href="#">
+            Plus de ressources
+        </a>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-10">
+        <div class="w-full lg:col-span-2">
+            <div class="section-heading style-2 mb-7 w-full mt-10">
+                <h1 class="text-3xl mb-2">
+                    <i class="fa-solid fa-award text-tutomarkspurple mr-3"></i>Formations
+                </h1>
+                <div class="line"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="card bg-base-100 shadow-md" data-theme="winter">
+                    <figure><img src="https://tutomarks.fr/uploads/images/63f77f1720c69_SCR-20230223-m21.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title text-base">
+                            Coder 30% plus vite avec GitHub Copilot
+                        </h2>
+                        <p>Alex So Yes</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge text-xs badge-secondary">NEW</div>
+                            <div class="badge text-xs badge-primary">Fr</div>
+                            <div class="badge text-xs badge-outline">Github</div>
+                            <div class="badge text-xs badge-outline">Copilot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-md" data-theme="winter">
+                    <figure><img src="https://tutomarks.fr/uploads/images/63f77f1720c69_SCR-20230223-m21.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title text-base">
+                            Coder 30% plus vite avec GitHub Copilot
+                        </h2>
+                        <p>Alex So Yes</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge text-xs badge-secondary">NEW</div>
+                            <div class="badge text-xs badge-primary">Fr</div>
+                            <div class="badge text-xs badge-outline">Github</div>
+                            <div class="badge text-xs badge-outline">Copilot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-md" data-theme="winter">
+                    <figure><img src="https://tutomarks.fr/uploads/images/63f77f1720c69_SCR-20230223-m21.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title text-base">
+                            Coder 30% plus vite avec GitHub Copilot
+                        </h2>
+                        <p>Alex So Yes</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge text-xs badge-secondary">NEW</div>
+                            <div class="badge text-xs badge-primary">Fr</div>
+                            <div class="badge text-xs badge-outline">Github</div>
+                            <div class="badge text-xs badge-outline">Copilot</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-md" data-theme="winter">
+                    <figure><img src="https://tutomarks.fr/uploads/images/63f77f1720c69_SCR-20230223-m21.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title text-base">
+                            Coder 30% plus vite avec GitHub Copilot
+                        </h2>
+                        <p>Alex So Yes</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge text-xs badge-secondary">NEW</div>
+                            <div class="badge text-xs badge-primary">Fr</div>
+                            <div class="badge text-xs badge-outline">Github</div>
+                            <div class="badge text-xs badge-outline">Copilot</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="flex justify-center w-full border-b-2 border-current text-slate-300 hover:text-accent mt-6" href="#">
+                Plus de formations
+            </a>
+        </div>
+
+        <div class="w-full">
+            <div class="section-heading style-2 mb-7 w-full mt-10">
+                <h1 class="text-3xl mb-2">
+                    <i class="fa-solid fa-calendar-days text-tutomarkspurple mr-3"></i>Evénements
+                </h1>
+                <div class="line"></div>
+            </div>
+
+            <div class="card bg-base-100 shadow-md w-full">
+                <div class="card-body">
+                    <p class="text-sm">13-14 Septembre 2023</p>
+                    <h2 class="card-title text-base">API Plateform CONF 2023</h2>
+                    <p class="text-sm">LesTilleuls.coop</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-outline">Payant</div>
+                        <div class="badge text-xs badge-outline">Lille</div>
+                    </div>
+                </div>
+                <hr/>
+
+                <div class="card-body">
+                    <p class="text-sm">13-14 Septembre 2023</p>
+                    <h2 class="card-title text-base">API Plateform CONF 2023</h2>
+                    <p class="text-sm">LesTilleuls.coop</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-outline">Payant</div>
+                        <div class="badge text-xs badge-outline">Lille</div>
+                    </div>
+                </div>
+                <hr/>
+
+                <div class="card-body">
+                    <p class="text-sm">13-14 Septembre 2023</p>
+                    <h2 class="card-title text-base">API Plateform CONF 2023</h2>
+                    <p class="text-sm">LesTilleuls.coop</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-outline">Payant</div>
+                        <div class="badge text-xs badge-outline">Lille</div>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div class="card-body">
+                    <p class="text-sm">13-14 Septembre 2023</p>
+                    <h2 class="card-title text-base">API Plateform CONF 2023</h2>
+                    <p class="text-sm">LesTilleuls.coop</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge text-xs badge-outline">Payant</div>
+                        <div class="badge text-xs badge-outline">Lille</div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="flex justify-center w-full border-b-2 border-current text-slate-300 hover:text-accent mt-4" href="#">
+                Plus d'événements
+            </a>
+        </div>
+    </div>
+{% endblock %}
