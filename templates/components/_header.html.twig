@@ -1,6 +1,16 @@
 <div class="navbar bg-base-100 shadow-lg fixed top-0 left-0 right-0 z-[1030]">
     <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl">Tutomarks</a>
+{#        <a class="btn btn-ghost normal-case text-xl">Tutomarks</a>#}
+
+        <a href="{{ path('app_home') }}" class="h-[75px] flex flex-rox items-center">
+            <img src="{{ asset('build/images/Logo.png') }}"
+                 alt="TutoMarks"
+                 class="h-[75px] mr-1"
+                 loading="lazy"
+            >
+            <span class="text-2xl"><span class="text-tutomarkspurple">TUTO</span><span class="text-primary">MARKS</span></span>
+        </a>
+
     </div>
     <div class="flex-none gap-2">
         <div class="form-control">

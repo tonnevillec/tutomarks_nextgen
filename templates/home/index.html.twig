@@ -14,26 +14,52 @@
     </div>
 
     <div class="section-heading style-2 mb-7 w-full mt-10">
-        <h1 class="text-3xl mb-2">
-            <i class="fa-brands fa-youtube text-tutomarkspurple mr-3"></i>Dernières Vidéos
-        </h1>
+        <div class="flex flex-row justify-between items-center">
+            <h2 class="text-3xl mb-2">
+                <i class="fa-brands fa-youtube text-tutomarkspurple mr-3"></i>Dernières Vidéos
+            </h2>
+
+            <a href="#" class="group text-secondary hover:text-tutomarkspurple rounded-full border border-secondary px-2 text-sm">
+                <i class="fa-solid fa-plus mr-1"></i><span class="hidden group-hover:inline-block group-hover:transition group-hover:duration-300">Ajouter une vidéo</span>
+            </a>
+        </div>
+
         <div class="line"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 place-items-stretch">
         <div class="card bg-base-100 shadow-md" data-theme="winter">
-            <img src="https://picsum.photos/640/480?random=1" class="rounded-tl-box rounded-tr-box" alt="Shoes" />
+            <img src="https://picsum.photos/640/480?random=1"
+                 class="rounded-tl-box rounded-tr-box"
+                 alt="Shoes"
+            />
             <div class="card-body">
                 <h2 class="card-title text-base">
-                    Install Docker + Traefik (HTTPS)👌+ URL Extérieur HA , Fri...
+                    <a href="#" class="hover:text-tutomarkspurple">Install Docker + Traefik (HTTPS)👌+ URL Extérieur HA , Fri...</a>
                 </h2>
-                <p>Raynox</p>
+
+                <div class="avatar flex flex-row items-center gap-2">
+                    <div class="w-10 rounded-full">
+                        <img alt="Avatar de la chaine Raynox" src="https://picsum.photos/640/480?random=5" />
+                    </div>
+
+{#                    <a href="#" class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 hover:before:bg-tutomarkspurple relative inline-block">#}
+{#                        <span class="relative text-white">Raynox</span>#}
+{#                    </a>#}
+
+                    <a href="#" class="hover:text-tutomarkspurple">Raynox</a>
+                </div>
+
                 <div class="card-actions justify-end">
                     <div class="badge text-xs badge-secondary">NEW</div>
                     <div class="badge text-xs badge-primary">Fr</div>
                     <div class="badge text-xs badge-outline">Proxmox</div>
                     <div class="badge text-xs badge-outline">Docker</div>
                     <div class="badge text-xs badge-outline">Traefik</div>
+                </div>
+
+                <div class="card-actions justify-start text-xs text-neutral-400">
+                    <span>Ajouté par Cyril le 03 Aout 2023</span>
                 </div>
             </div>
         </div>
@@ -165,9 +191,9 @@
     <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-10">
         <div class="w-full lg:col-span-2">
             <div class="section-heading style-2 mb-7 w-full mt-10">
-                <h1 class="text-3xl mb-2">
+                <h2 class="text-3xl mb-2">
                     <i class="fa-solid fa-graduation-cap text-tutomarkspurple mr-3"></i>Tops créateurs
-                </h1>
+                </h2>
                 <div class="line"></div>
             </div>
 
@@ -178,14 +204,14 @@
                     </figure>
                     <div class="card-body flex-grow">
                         <h2 class="card-title text-base">
-                           Les Compagnons du DevOps
+                            <a href="#" class="hover:text-tutomarkspurple">Les Compagnons du DevOps</a>
                         </h2>
                         <div class="card-actions flex justify-between items-center">
                             <div class="flex justify-start">
                                 <button class="btn glass btn-sm me-1"><i class="fa-brands fa-youtube"></i></button>
-                                <button class="btn glass btn-sm me-1">Tw</button>
-                                <button class="btn glass btn-sm me-1">Si</button>
-                                <button class="btn glass btn-sm me-1">Gi</button>
+                                <button class="btn glass btn-sm me-1"><i class="fa-brands fa-twitter"></i></button>
+                                <button class="btn glass btn-sm me-1"><i class="fa-solid fa-globe"></i></button>
+                                <button class="btn glass btn-sm me-1"><i class="fa-brands fa-github"></i></button>
                             </div>
                             <span class="badge text-xs badge-accent badge-sm">89 partages</span>
                         </div>
@@ -296,9 +322,47 @@
             <a class="flex justify-center w-full border-b-2 border-current text-slate-300 hover:text-accent mt-6" href="#">
                 Plus de créateurs
             </a>
+
+            <div class="section-heading style-2 mb-7 w-full mt-10">
+                <h2 class="text-3xl mb-2">
+                    <i class="fa-solid fa-graduation-cap text-tutomarkspurple mr-3"></i>Tops catégories
+                </h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 w-full">
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Proxmox</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">React</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Symfony</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">CSS</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Tailwind</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Proxmox</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">React</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Symfony</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">CSS</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Tailwind</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Proxmox</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">React</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Symfony</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">CSS</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Tailwind</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Proxmox</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">React</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Symfony</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">CSS</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Tailwind</a>
+                <a href="#" class="badge text-xs badge-outline hover:text-tutomarkspurple">Proxmox</a>
+            </div>
         </div>
 
         <div class="w-full">
+            <div class="section-heading style-2 mb-7 w-full mt-10">
+                <h2 class="text-3xl mb-2">
+                    <i class="fa-solid fa-arrow-trend-up text-tutomarkspurple mr-3"></i>Stats
+                </h2>
+                <div class="line"></div>
+            </div>
+
             <div class="flex flex-col gap-3 mb-7">
                 <div class="stats shadow-md overflow-hidden" data-theme="winter">
                     <div class="stat text-center">
@@ -354,16 +418,20 @@
             </div>
 
             <div class="section-heading style-2 mb-7 w-full mt-10">
-                <h1 class="text-3xl mb-2">
+                <h2 class="text-3xl mb-2">
                     <i class="fa-solid fa-screwdriver-wrench text-tutomarkspurple mr-3"></i>Boite à outils
-                </h1>
+                </h2>
                 <div class="line"></div>
             </div>
 
             <div class="card bg-base-100 shadow-md w-full">
                 <div class="card-body">
-                    <h2 class="card-title text-base">Les 20 comptes Twitter à suivre pour les développeurs</h2>
-                    <p class="text-sm">HappyToDev</p>
+                    <h2 class="card-title text-base">
+                        <a href="#" class="hover:text-tutomarkspurple">Les 20 comptes Twitter à suivre pour les développeurs</a>
+                    </h2>
+                    <p class="text-sm">
+                        <a href="#" class="hover:text-tutomarkspurple">HappyToDev</a>
+                    </p>
                     <div class="card-actions justify-end">
                         <div class="badge text-xs badge-secondary">NEW</div>
                         <div class="badge text-xs badge-primary">Fr</div>
@@ -408,9 +476,9 @@
 
     <div class="w-full mt-10">
         <div class="section-heading style-2 mb-7 w-full mt-10">
-            <h1 class="text-3xl mb-2">
+            <h2 class="text-3xl mb-2">
                 <i class="fa-solid fa-newspaper text-tutomarkspurple mr-3"></i>Dernières ressources
-            </h1>
+            </h2>
             <div class="line"></div>
         </div>
 
@@ -418,8 +486,10 @@
             <div class="card card-side bg-base-100 shadow-md" data-theme="winter">
                 <img src="https://picsum.photos/640/480?random=1" class="rounded-tl-box rounded-bl-box w-52" alt="Shoes" />
                 <div class="card-body">
-                    <h2 class="card-title text-base">Quoi de neuf les devs ? Numéro #42</h2>
-                    <p class="text-sm">HappyToDev</p>
+                    <h2 class="card-title text-base">
+                        <a href="#" class="hover:text-tutomarkspurple">Quoi de neuf les devs ? Numéro #42 <i class="fa-solid fa-external-link ml-2 text-neutral-300"></i></a>
+                    </h2>
+                    <p class="text-sm"><a href="#" class="hover:text-tutomarkspurple">HappyToDev</a></p>
                     <div class="card-actions justify-end">
                         <div class="badge text-xs badge-primary">Fr</div>
                         <div class="badge text-xs badge-secondary">Article</div>
@@ -536,9 +606,9 @@
     <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-10">
         <div class="w-full lg:col-span-2">
             <div class="section-heading style-2 mb-7 w-full mt-10">
-                <h1 class="text-3xl mb-2">
+                <h2 class="text-3xl mb-2">
                     <i class="fa-solid fa-award text-tutomarkspurple mr-3"></i>Formations
-                </h1>
+                </h2>
                 <div class="line"></div>
             </div>
 
@@ -547,9 +617,9 @@
                     <figure><img src="https://tutomarks.fr/uploads/images/63f77f1720c69_SCR-20230223-m21.png" alt="Shoes" /></figure>
                     <div class="card-body">
                         <h2 class="card-title text-base">
-                            Coder 30% plus vite avec GitHub Copilot
+                            <a href="#" class="hover:text-tutomarkspurple">Coder 30% plus vite avec GitHub Copilot</a>
                         </h2>
-                        <p>Alex So Yes</p>
+                        <p><a href="#" class="hover:text-tutomarkspurple">Alex So Yes</a></p>
                         <div class="card-actions justify-end">
                             <div class="badge text-xs badge-secondary">NEW</div>
                             <div class="badge text-xs badge-primary">Fr</div>
@@ -615,16 +685,18 @@
 
         <div class="w-full">
             <div class="section-heading style-2 mb-7 w-full mt-10">
-                <h1 class="text-3xl mb-2">
+                <h2 class="text-3xl mb-2">
                     <i class="fa-solid fa-calendar-days text-tutomarkspurple mr-3"></i>Evénements
-                </h1>
+                </h2>
                 <div class="line"></div>
             </div>
 
             <div class="card bg-base-100 shadow-md w-full">
                 <div class="card-body">
                     <p class="text-sm">13-14 Septembre 2023</p>
-                    <h2 class="card-title text-base">API Plateform CONF 2023</h2>
+                    <h2 class="card-title text-base">
+                        <a href="#" class="hover:text-tutomarkspurple">API Plateform CONF 2023</a>
+                    </h2>
                     <p class="text-sm">LesTilleuls.coop</p>
                     <div class="card-actions justify-end">
                         <div class="badge text-xs badge-outline">Payant</div>
