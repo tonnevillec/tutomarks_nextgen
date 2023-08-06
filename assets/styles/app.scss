@@ -49,3 +49,21 @@
   position: absolute;
   width: 60px;
 }
+
+.card-footer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 2s cubic-bezier(.5, 0, 0, 1);
+}
