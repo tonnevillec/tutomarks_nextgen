@@ -58,12 +58,20 @@
                         </div>
 
                         <div class="mb-2 text-end">
-                            <a class="text-sm text-neutral-400 hover:text-secondary" href="#">Mot de passe oublié ?</a>
+                            <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-400 transform p-1 -skew-y-6 inline-flex"><a class="transform skew-y-6 mx-3" href="#">Mot de passe oublié ?</a></span>
+{#                            <a class="text-sm text-neutral-400 hover:text-secondary" href="#">Mot de passe oublié ?</a>#}
                         </div>
 
                         <button type="submit"
                                 class="btn btn-sm btn-success text-white hover:bg-teal-500 w-full text-center mb-2">Connexion</button>
                     </form>
+
+                    <div class="divider"></div>
+
+                    <div class="w-full text-center">
+                        Nouveau ? <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-400 transform p-1 -skew-y-6 inline-flex"><a class="transform skew-y-6 mx-3" href="#">S'inscrire</a></span>
+{#                        <a href="#" class="hover:text-secondary text-decoration-underline">S'inscrire</a>#}
+                    </div>
                 </div>
             </div>
             {% endif %}
