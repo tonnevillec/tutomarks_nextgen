@@ -15,7 +15,34 @@
     <body class="relative">
         {% include 'components/_header.html.twig' %}
 
-        <div class="mt-24 mx-7 xl:mx-30 lg:mx-24">
+        <div class="w-full m-0 p-0 bg-cover bg-bottom" style="background-image:url('/build/images/bg-header.jpg'); height: 60vh; max-height:460px;">
+            <div class="flex justify-center max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal">
+                <div class="w-full">
+                    <h1 class="mb-5 text-5xl font-bold">Partagez votre expérience</h1>
+                    <p class="mb-5">
+                        Vous <span class="bg-secondary text-white transform p-1 -skew-y-6 inline-flex"><a href="#" class="transform skew-y-6">Recherchez</a></span> des sources afin de vous améliorer ou vous voulez<span class="bg-primary text-white transform p-1 -skew-y-6 inline-flex"><a href="#" class="transform skew-y-6">partager</a></span> du contenu pour aider les autres ?
+                    </p>
+                    <p class="mb-5">Bienvenue sur <span class="bg-secondary text-white transform p-1 -skew-y-6 inline-flex"><a href="#" class="transform skew-y-6">Tuto</a></span><span class="bg-primary text-white transform p-1 -skew-y-6 inline-flex"><a href="#" class="transform skew-y-6">marks</a></span></p>
+
+
+                    <div class="flex flex-row">
+                        <div class="form-control w-full basis-3/4">
+                            <label for="fsearch" aria-hidden="true"></label>
+                            <input type="text"
+                                   placeholder="Que cherchez-vous ?"
+                                   class="input input-bordered input-sm w-24 w-full"
+                                   id="fsearch"
+                            />
+                        </div>
+
+                        <button class="btn btn-sm btn-primary basis-1/4"><i class="fa-solid fa-search mr-1"></i>Rechercher</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mx-7 xl:mx-30 lg:mx-24">
             {% block body %}{% endblock %}
         </div>
 
