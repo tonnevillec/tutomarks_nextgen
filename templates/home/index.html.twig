@@ -3,7 +3,36 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
+<div class="w-full m-0 p-0 bg-cover bg-bottom" style="background-image:url('/build/images/bg-header.jpg'); height: 60vh; max-height:460px;">
+    <div class="flex justify-center max-w-4xl mx-auto pt-32 text-center break-normal">
+        <div class="w-full">
+            <h1 class="mb-5 text-5xl font-bold">Partagez votre expérience</h1>
+            <p class="mb-5">
+                Vous <span class="bg-secondary text-white transform p-1 -skew-y-6 inline-flex"><a href="#" class="transform skew-y-6">Recherchez</a></span> des sources afin de vous améliorer ou vous voulez<span class="bg-primary text-white transform p-1 -skew-y-6 inline-flex"><a href="#" class="transform skew-y-6">partager</a></span> du contenu pour aider les autres ?
+            </p>
+            <p class="mb-5">Bienvenue sur <span class="bg-secondary text-white transform p-1 -skew-y-6 inline-flex"><a href="#" class="transform skew-y-6">Tuto</a></span><span class="bg-primary text-white transform p-1 -skew-y-6 inline-flex"><a href="#" class="transform skew-y-6">marks</a></span></p>
 
+            <div class="join w-[50%]">
+                <div class="w-[95%]">
+                    <div>
+                        <input class="input input-bordered rounded-tl-box rounded-bl-box join-item input-sm w-full"
+                               id="fsearch"
+                               placeholder="Que cherchez-vous ?"
+                        />
+                        <label for="fsearch" aria-hidden="true" class="hidden">Rechercher</label>
+                    </div>
+                </div>
+                <div class="w-[5%]">
+                    <button class="btn join-item btn-sm rounded-r-full bg-secondary hover:bg-primary text-white">
+                        <i class="fa-solid fa-rocket mr-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mx-7 xl:mx-30 lg:mx-24 mb-24">
     <div class="flex flex-col md:flex-row justify-center rounded-xl p-7 -mt-5 bg-white glass">
         <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-400 transform p-1 -skew-y-6 inline-flex"><a class="transform skew-y-6 mx-3" href="#sectionVideos">Vidéos</a></span>
         <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-400 transform p-1 -skew-y-6 inline-flex"><a class="transform skew-y-6 mx-3" href="#sectionCreateurs">Top créateurs</a></span>
@@ -435,4 +464,5 @@
 
         </div>
     </section>
+</div>
 {% endblock %}

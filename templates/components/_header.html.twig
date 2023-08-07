@@ -58,8 +58,7 @@
                         </div>
 
                         <div class="mb-2 text-end">
-                            <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-400 transform p-1 -skew-y-6 inline-flex"><a class="transform skew-y-6 mx-3" href="#">Mot de passe oublié ?</a></span>
-{#                            <a class="text-sm text-neutral-400 hover:text-secondary" href="#">Mot de passe oublié ?</a>#}
+                            <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-400 transform p-1 -skew-y-6 inline-flex"><a class="transform skew-y-6 mx-3" href="{{ path('app_password') }}">Mot de passe oublié ?</a></span>
                         </div>
 
                         <button type="submit"
@@ -69,8 +68,7 @@
                     <div class="divider"></div>
 
                     <div class="w-full text-center">
-                        Nouveau ? <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-400 transform p-1 -skew-y-6 inline-flex"><a class="transform skew-y-6 mx-3" href="#">S'inscrire</a></span>
-{#                        <a href="#" class="hover:text-secondary text-decoration-underline">S'inscrire</a>#}
+                        Nouveau ? <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-400 transform p-1 -skew-y-6 inline-flex"><a class="transform skew-y-6 mx-3" href="{{ path('app_register') }}">S'inscrire</a></span>
                     </div>
                 </div>
             </div>

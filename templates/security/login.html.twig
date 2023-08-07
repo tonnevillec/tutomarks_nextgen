@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <div class="mx-7 xl:mx-30 lg:mx-24 mt-24">
+        {% if error %}
+        <div class="row mb-3">
+            <div class="col-6 offset-3">
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if app.user %}
+        <div class="row mb-3">
+            <div class="col-6 offset-3">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        </div>
+        {% endif %}
+
+        <form method="post" class="form" role="form" accept-charset="UTF-8">
+            <div class="row">
+                <div class="col-6 offset-3 text-center">
+                    <h2 class="h2 mb-4"><i class="bi bi-person text-danger me-2"></i> <strong>{{ 'nav.login'|trans|capitalize }}</strong></h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <div class="form-group mb-3">
+                        <label for="inputEmail">{{ 'user.email.title'|trans|capitalize }}</label>
+                        <input type="email"
+                               value="{{ last_username }}"
+                               name="email"
+                               id="inputEmail"
+                               class="form-control"
+                               autocomplete="email"
+                               required
+                               autofocus>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="inputPassword">{{ 'user.password.title'|trans|capitalize }}</label>
+                        <input type="password"
+                               name="password"
+                               id="inputPassword"
+                               class="form-control"
+                               autocomplete="current-password"
+                               required>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden"
+                   name="_csrf_token"
+                   value="{{ csrf_token('authenticate') }}"
+            />
+
+            <div class="row text-center">
+                <div class="col-6 offset-3">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-check me-2"></i> {{ 'nav.login'|trans|capitalize }}
+                    </button>
+                </div>
+            </div>
+        </form>
+
+{#        <div class="row my-4 text-center">#}
+{#            <div class="col-6 offset-3 register_or">#}
+{#                <strong>ou</strong>#}
+{#            </div>#}
+{#        </div>#}
+
+{#        <div class="row mb-4">#}
+{#            <div class="col-6 offset-3 text-center">#}
+{#                <h2 class="h2"><i class="bi bi-share-fill text-danger me-2"></i> <strong>{{ 'btn.social.connect'|trans|capitalize }}</strong></h2>#}
+{#                <small>{{ 'btn.social.connect_help'|trans|capitalize }}</small>#}
+{#            </div>#}
+{#        </div>#}
+
+{#        <div class="row">#}
+{#            <div class="col-6 offset-3 text-center">#}
+{#                <a class="btn btn-outline-danger" href="#"><i class="bi bi-google me-2"></i> Compte Google</a>#}
+{#                <a class="btn btn-outline-secondary" href="#"><i class="bi bi-github me-2"></i> Compte Github</a>#}
+{#            </div>#}
+{#        </div>#}
+    </div>
+{% endblock %}
