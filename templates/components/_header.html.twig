@@ -1,4 +1,4 @@
-<div class="navbar bg-base-100 shadow-lg fixed top-0 left-0 right-0 z-[1030]">
+<div class="navbar glass {% if app.request.get('_route') not in ('app_home') %}bg-base-100{% endif%} shadow-lg fixed top-0 left-0 right-0 z-[1030]" {% if app.request.get('_route') in ('app_home') %}id="navHeader"{% endif%}>
     <div class="navbar-start w-1/2">
         <a href="{{ path('app_home') }}" class="h-[75px] flex flex-rox items-center">
             <img src="{{ asset('build/images/Logo.png') }}"
@@ -6,8 +6,8 @@
                  class="h-[75px] mr-1"
                  loading="lazy"
             >
-            <span class="hidden md:block">
-                <span class="text-2xl"><span class="text-secondary">TUTO</span><span class="text-primary">MARKS</span></span>
+            <span class="hidden md:block group text-2xl">
+                <span class="text-secondary group-hover:text-primary">TUTO</span><span class="text-primary group-hover:text-secondary">MARKS</span>
             </span>
         </a>
     </div>
