@@ -5,14 +5,17 @@ use App\Entity\Authors;
 use App\Entity\Categories;
 use App\Entity\Links;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
 class FunctionExtension extends AbstractExtension
 {
 
-    public function __construct(private readonly EntityManagerInterface $em)
-    {}
+    public function __construct(
+        private readonly EntityManagerInterface $em,
+        private readonly UrlGeneratorInterface $generator,
+    ){}
 
     public function getFunctions(): array
     {
@@ -23,6 +26,8 @@ class FunctionExtension extends AbstractExtension
             new TwigFunction('countForCategory', [$this, 'getCountForCategory'], $default),
             new TwigFunction('countForAuthors', [$this, 'getCountForAuthors'], $default),
             new TwigFunction('categoryIcon', [$this, 'getCategoryIcon'], $default),
+            new TwigFunction('menuAuthors', [$this, 'getMenuAuthors'], $default),
+            new TwigFunction('menuCategories', [$this, 'getMenuCategories'], $default),
         ];
     }
 
@@ -69,5 +74,62 @@ class FunctionExtension extends AbstractExtension
         }
 
         return !is_null($category->getLogo()) && '' !== $category->getLogo() ? $category->getLogo() : 'fa-solid fa-box';
+    }
+
+    public function getMenuAuthors(): string
+    {
+        $authors = $this->em
+            ->getRepository(Authors::class)
+            ->findTop(5)
+        ;
+
+        if (!$authors) {
+            return '';
+        }
+
+        $return = '';
+        foreach ($authors as $author) {
+            if ($author[0]->getLogo()) {
+                $logo = '<div class="w-10 rounded-full"><img alt="Avatar de la chaine '.$author[0]->getTitle().'" src="'.$author[0]->getLogo().'" /></div>';
+            } else {
+                $logo = '<div class="w-10 rounded-full"><i class="fa-solid fa-user"></i></div>';
+            }
+//            $r = $this->generator->generate('authors.show', [
+//                'slug' => $author[0]->getSlug(),
+//                'id' => $author[0]->getId(),
+//            ]);
+            $r = '#';
+            $return .= '<li class="group">
+                <div class="avatar flex flex-row items-center gap-2 group-hover:bg-secondary group-hover:text-white">
+                '.$logo.'<a href="'.$r.'" class="group-hover:text-white text-neutral-500">'.$author[0]->getTitle().'</a>
+                </div>
+            </li>
+            ';
+        }
+
+        return $return;
+    }
+
+    public function getMenuCategories(): string
+    {
+        $categories = $this->em
+            ->getRepository(Categories::class)
+            ->findBy(['is_actif' => true], ['id' => 'ASC'])
+        ;
+
+        $return = '';
+        foreach ($categories as $category) {
+//            $path = $this->router->generate('search', [
+//                'categories[]' => $category->getId(),
+//            ]);
+            $path = '#';
+            $return .= '<li>
+                <a href="'.$path.'" class="hover:bg-secondary hover:text-white text-neutral-500">               
+                    '.$category->getTitle().'
+                </a>
+            </li>';
+        }
+
+        return $return;
     }
 }

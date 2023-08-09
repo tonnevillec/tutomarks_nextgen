@@ -40,7 +40,7 @@ class SecurityController extends AbstractController
         if ($this->getUser()) {
             $this->addFlash('warning', 'Tu es déjà connecté ;)');
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('app_home');
         }
 
         $error = $authenticationUtils->getLastAuthenticationError();
@@ -127,6 +127,6 @@ class SecurityController extends AbstractController
 
         $this->addFlash('success', ucfirst($this->translator->trans('password.forget.validate')));
 
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('app_home');
     }
 }
