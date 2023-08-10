@@ -1,20 +1,16 @@
 <footer class="footer p-10 bg-base-100 border-t-2 border-t-zinc-300 shadow xl:px-30 lg:px-24">
     <div>
         <span class="footer-title">Sections</span>
+        {% for cat in codeCategories() %}
         <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-500 transform p-1 -skew-y-6 inline-flex">
-            <a class="transform skew-y-6 mx-3" href="#">Vidéos</a>
+            <a class="transform skew-y-6 mx-3" href="#">{{ cat.title }}</a>
         </span>
+        {% endfor %}
         <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-500 transform p-1 -skew-y-6 inline-flex">
             <a class="transform skew-y-6 mx-3" href="#">Créateurs</a>
         </span>
         <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-500 transform p-1 -skew-y-6 inline-flex">
-            <a class="transform skew-y-6 mx-3" href="#">Ressources</a>
-        </span>
-        <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-500 transform p-1 -skew-y-6 inline-flex">
-            <a class="transform skew-y-6 mx-3" href="#">Formations</a>
-        </span>
-        <span class="bg-transparent hover:bg-secondary hover:text-white text-neutral-500 transform p-1 -skew-y-6 inline-flex">
-            <a class="transform skew-y-6 mx-3" href="#">Evenements</a>
+            <a class="transform skew-y-6 mx-3" href="#">Evénements</a>
         </span>
     </div>
 

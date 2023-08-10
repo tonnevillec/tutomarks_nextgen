@@ -30,5 +30,9 @@ module.exports = {
     darkTheme: "night",
     utils: true,
   },
+  safelist: [
+      'w-8',
+      'group-hover:text-white'
+  ]
 }
 

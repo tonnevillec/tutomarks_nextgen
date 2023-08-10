@@ -22,9 +22,9 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         $vidz = $this->em->getRepository(YoutubeLinks::class)->findBy([], ['published_at' => 'desc'], 8);
-        $ressources = $this->em->getRepository(Links::class)->findLatestRessources(['articles', 'podcasts'], 8);
+        $ressources = $this->em->getRepository(Links::class)->findLatestRessources(['ressources'], 8);
         $formations = $this->em->getRepository(Links::class)->findLatestRessources(['formations'], 4);
-        $tools = $this->em->getRepository(Links::class)->findLatestRessources(['ressources'], 3);
+        $tools = $this->em->getRepository(Links::class)->findLatestRessources(['tools'], 3);
         $events = $this->em->getRepository(Events::class)->findEventsByDate(6);
         $authors = $this->em->getRepository(Authors::class)->findTop(6);
         $tags = $this->em->getRepository(Tags::class)->findTop(20);

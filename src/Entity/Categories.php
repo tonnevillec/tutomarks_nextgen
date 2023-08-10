@@ -39,6 +39,9 @@ class Categories
     #[ORM\Column(type: 'datetime', nullable: true)]
     private ?\DateTimeInterface $updatedAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'categories')]
+    private ?CodeCategories $codeCategory = null;
+
     public function __construct()
     {
         $this->links = new ArrayCollection();
@@ -163,5 +166,17 @@ class Categories
     public function __toString(): string
     {
         return (string) $this->getTitle();
+    }
+
+    public function getCodeCategory(): ?CodeCategories
+    {
+        return $this->codeCategory;
+    }
+
+    public function setCodeCategory(?CodeCategories $codeCategory): static
+    {
+        $this->codeCategory = $codeCategory;
+
+        return $this;
     }
 }

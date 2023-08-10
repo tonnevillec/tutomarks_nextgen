@@ -192,7 +192,7 @@
                 {% for tool in tools %}
                 <div class="card-body">
                     <h2 class="card-title text-base">
-                        <a href="{{ tool.url }}" class="hover:text-secondary">{{ tool.title }}</a>
+                        <a href="{{ tool.url }}" class="hover:text-secondary">{{ tool.title }} <i class="fa-solid fa-external-link ml-2 text-neutral-300"></i></a>
                     </h2>
                     <p class="text-sm">
                         <a href="#" class="hover:text-secondary">{{ tool.author.title }}</a>
@@ -228,7 +228,7 @@
                 </figure>
                 <div class="flex flex-grow flex-col">
                     <h2 class="text-3xl">
-                        <a href="#" class="hover:text-secondary">Quoi de neuf les devs ?</a>
+                        <a href="#" class="hover:text-secondary" target="_blank">Quoi de neuf les devs ?</a>
                     </h2>
                     <div class="flex justify-between items-center">
                         <div></div>
@@ -320,7 +320,7 @@
                     </figure>
                     <div class="card-body">
                         <h3 class="card-title text-base">
-                            <a href="{{ formation.url }}" class="hover:text-secondary">{{ formation.title }}</a>
+                            <a href="{{ formation.url }}" class="hover:text-secondary" target="_blank">{{ formation.title }} <i class="fa-solid fa-external-link ml-2 text-neutral-300"></i></a>
                         </h3>
                         <p><a href="#" class="hover:text-secondary">{{ formation.author.title }}</a></p>
                         <div class="card-actions justify-end">
@@ -381,7 +381,7 @@
                 <div class="card-body">
                     <p class="text-sm">{{ event.startedAt|date('d/m/Y') }}</p>
                     <h2 class="card-title text-base">
-                        <a href="{{ event.url }}" class="hover:text-secondary">{{ event.title }}</a>
+                        <a href="{{ event.url }}" class="hover:text-secondary" target="_blank">{{ event.title }} <i class="fa-solid fa-external-link ml-2 text-neutral-300"></i></a>
                     </h2>
                     <p class="text-sm">{{ event.author.title }}</p>
                     <div class="card-actions justify-end">

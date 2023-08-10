@@ -1,10 +1,14 @@
-<div class="menu p-4 w-80 h-screen pt-32 bg-base-200 text-base-content">
+<div class="menu p-4 w-80 pt-28 bg-base-200 text-base-content">
     <ul class="text-md">
         <!-- Sidebar content here -->
         <li>
             <a href="{{ path('app_home') }}" class="hover:bg-secondary hover:text-white text-neutral-500">Accueil</a>
         </li>
-        {{ menuCategories() }}
+        {% for cat in codeCategories() %}
+            <li>
+                <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">{{ cat.title }}</a>
+            </li>
+        {% endfor %}
         <li>
             <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Evenements</a>
         </li>
@@ -38,7 +42,7 @@
             </li>
             {% if is_granted('ROLE_ADMIN') %}
                 <li>
-                    <a href="#" class="hover:bg-secondary hover:text-white text-accent">Administration</a>
+                    <a href="{{ path('admin') }}" class="hover:bg-secondary hover:text-white text-accent">Administration</a>
                 </li>
             {% endif %}
         {% else %}

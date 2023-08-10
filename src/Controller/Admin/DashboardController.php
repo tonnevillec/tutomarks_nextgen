@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Authors;
 use App\Entity\Categories;
+use App\Entity\CodeCategories;
 use App\Entity\Events;
 use App\Entity\Languages;
 use App\Entity\QuoiDeNeufLesDevs;
@@ -39,6 +40,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::subMenu('Administation')->setSubItems([
+            MenuItem::linkToCrud('CodeCategories', 'fas fa-list', CodeCategories::class),
             MenuItem::linkToCrud('Categories', 'fas fa-list', Categories::class),
             MenuItem::linkToCrud('Tags', 'fas fa-list', Tags::class),
             MenuItem::linkToCrud('Authors', 'fas fa-list', Authors::class),

@@ -3,6 +3,7 @@ namespace App\Twig;
 
 use App\Entity\Authors;
 use App\Entity\Categories;
+use App\Entity\CodeCategories;
 use App\Entity\Links;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -27,7 +28,7 @@ class FunctionExtension extends AbstractExtension
             new TwigFunction('countForAuthors', [$this, 'getCountForAuthors'], $default),
             new TwigFunction('categoryIcon', [$this, 'getCategoryIcon'], $default),
             new TwigFunction('menuAuthors', [$this, 'getMenuAuthors'], $default),
-            new TwigFunction('menuCategories', [$this, 'getMenuCategories'], $default),
+            new TwigFunction('codeCategories', [$this, 'getCodeCategories'], $default),
         ];
     }
 
@@ -90,9 +91,9 @@ class FunctionExtension extends AbstractExtension
         $return = '';
         foreach ($authors as $author) {
             if ($author[0]->getLogo()) {
-                $logo = '<div class="w-10 rounded-full"><img alt="Avatar de la chaine '.$author[0]->getTitle().'" src="'.$author[0]->getLogo().'" /></div>';
+                $logo = '<div class="w-8 rounded-full"><img alt="Avatar de la chaine '.$author[0]->getTitle().'" src="'.$author[0]->getLogo().'" /></div>';
             } else {
-                $logo = '<div class="w-10 rounded-full"><i class="fa-solid fa-user"></i></div>';
+                $logo = '<div class="w-8 rounded-full"><i class="fa-solid fa-user"></i></div>';
             }
 //            $r = $this->generator->generate('authors.show', [
 //                'slug' => $author[0]->getSlug(),
@@ -110,26 +111,11 @@ class FunctionExtension extends AbstractExtension
         return $return;
     }
 
-    public function getMenuCategories(): string
+    public function getCodeCategories(): array
     {
-        $categories = $this->em
-            ->getRepository(Categories::class)
-            ->findBy(['is_actif' => true], ['id' => 'ASC'])
+        return $this->em
+            ->getRepository(CodeCategories::class)
+            ->findBy(['actif' => true], ['id' => 'ASC'])
         ;
-
-        $return = '';
-        foreach ($categories as $category) {
-//            $path = $this->router->generate('search', [
-//                'categories[]' => $category->getId(),
-//            ]);
-            $path = '#';
-            $return .= '<li>
-                <a href="'.$path.'" class="hover:bg-secondary hover:text-white text-neutral-500">               
-                    '.$category->getTitle().'
-                </a>
-            </li>';
-        }
-
-        return $return;
     }
 }

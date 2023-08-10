@@ -3,7 +3,19 @@
 namespace App\Controller\Admin;
 
 use App\Entity\SimpleLinks;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class SimpleLinksCrudController extends AbstractCrudController
 {
@@ -12,14 +24,38 @@ class SimpleLinksCrudController extends AbstractCrudController
         return SimpleLinks::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield IdField::new('id')->hideOnForm();
+        yield TextField::new('title');
+        yield AssociationField::new('author');
+        yield UrlField::new('url');
+        yield AssociationField::new('category');
+        yield AssociationField::new('tags');
+        yield AssociationField::new('language');
+        yield ImageField::new('image')
+            ->setBasePath('/uploads/images/')
+            ->setUploadDir('public/uploads/images/');
+        yield BooleanField::new('is_publish');
+
+        $publishedAt = DateTimeField::new('published_at')->setFormTypeOptions([
+            'html5' => true,
+            'years' => range(date('Y'), date('Y') + 5),
+            'widget' => 'single_text',
+        ]);
+        if (Crud::PAGE_EDIT === $pageName) {
+            yield $publishedAt->setFormTypeOption('disabled', true);
+        } else {
+            yield $publishedAt;
+        }
+
+        yield TextEditorField::new('description')->hideOnIndex();
     }
-    */
+
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->disable(Action::NEW)
+            ;
+    }
 }
