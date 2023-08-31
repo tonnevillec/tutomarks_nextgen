@@ -19,12 +19,12 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'AUTO')]
     #[ORM\Column(type: 'integer')]
-    #[Groups(groups: ['posts.show'])]
+    #[Groups(groups: ['links.read'])]
     private ?int $id = null;
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     #[Assert\Email]
-    #[Groups(groups: ['posts.show'])]
+    #[Groups(groups: ['links.read'])]
     private ?string $email = null;
 
     #[ORM\Column(type: 'json')]
@@ -44,7 +44,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTime $last_connection;
 
     #[ORM\Column(name: 'username', type: 'string', length: 255, nullable: true)]
-    #[Groups(groups: ['posts.show'])]
+    #[Groups(groups: ['links.read'])]
     private ?string $username = null;
 
     #[ORM\OneToMany(mappedBy: 'published_by', targetEntity: Links::class)]

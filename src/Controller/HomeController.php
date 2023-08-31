@@ -41,4 +41,10 @@ class HomeController extends AbstractController
             'newsletters' => $newsletters,
         ]);
     }
+
+    #[Route('/search', name: 'app_search')]
+    public function search(): Response
+    {
+        return $this->render('search/index.html.twig');
+    }
 }

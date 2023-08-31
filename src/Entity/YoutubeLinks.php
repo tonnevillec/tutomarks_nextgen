@@ -5,20 +5,25 @@ namespace App\Entity;
 use App\Repository\YoutubeLinksRepository;
 use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: YoutubeLinksRepository::class)]
 class YoutubeLinks extends Links
 {
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups(groups: ['links.read'])]
     private ?string $youtube_id = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Groups(groups: ['links.read'])]
     private ?string $img_small = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Groups(groups: ['links.read'])]
     private ?string $img_medium = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Groups(groups: ['links.read'])]
     private ?string $img_large = null;
 
     public function __construct()

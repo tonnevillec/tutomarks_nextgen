@@ -6,6 +6,7 @@ use App\Repository\CategoriesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: CategoriesRepository::class)]
 class Categories
@@ -13,9 +14,11 @@ class Categories
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'AUTO')]
     #[ORM\Column(type: 'integer')]
+    #[Groups(groups: ['links.read'])]
     private ?int $id = null;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups(groups: ['links.read'])]
     private ?string $title = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
@@ -28,6 +31,7 @@ class Categories
     private ?string $link_entity = null;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups(groups: ['links.read'])]
     private ?string $code = null;
 
     #[ORM\Column(type: 'boolean', nullable: true)]
@@ -40,6 +44,7 @@ class Categories
     private ?\DateTimeInterface $updatedAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'categories')]
+    #[Groups(groups: ['links.read'])]
     private ?CodeCategories $codeCategory = null;
 
     public function __construct()

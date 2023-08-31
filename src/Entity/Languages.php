@@ -18,15 +18,15 @@ class Languages
     private ?int $id = null;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups(groups: ['show_hebdoos'])]
+    #[Groups(groups: ['links.read'])]
     private ?string $name = null;
 
     #[ORM\Column(type: 'string', length: 3, nullable: true)]
-    #[Groups(groups: ['show_hebdoos'])]
+    #[Groups(groups: ['links.read'])]
     private ?string $shortname = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Groups(groups: ['show_hebdoos'])]
+    #[Groups(groups: ['links.read'])]
     private ?string $logo = null;
 
     #[ORM\OneToMany(mappedBy: 'language', targetEntity: Links::class)]

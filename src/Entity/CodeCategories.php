@@ -6,6 +6,7 @@ use App\Repository\CodeCategoriesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: CodeCategoriesRepository::class)]
 class CodeCategories
@@ -13,12 +14,15 @@ class CodeCategories
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(groups: ['links.read', 'categories.read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 20)]
+    #[Groups(groups: ['links.read', 'categories.read'])]
     private ?string $code = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(groups: ['links.read', 'categories.read'])]
     private ?string $title = null;
 
     #[ORM\Column]
@@ -35,6 +39,12 @@ class CodeCategories
     public function __toString(): string
     {
         return $this->title;
+    }
+
+    #[Groups(groups: ['links.read', 'categories.read'])]
+    public function getValue(): string
+    {
+        return $this->code;
     }
 
     public function getId(): ?int

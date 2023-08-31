@@ -6,6 +6,7 @@ use App\Repository\LinksRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: LinksRepository::class)]
@@ -23,40 +24,51 @@ abstract class Links
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'AUTO')]
     #[ORM\Column(type: 'integer')]
+    #[Groups(groups: ['links.read'])]
     private ?int $id = null;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups(groups: ['links.read'])]
     private ?string $title = null;
 
     #[ORM\Column(type: 'datetime')]
+    #[Groups(groups: ['links.read'])]
     private \DateTimeInterface $published_at;
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\Url]
+    #[Groups(groups: ['links.read'])]
     private ?string $url = null;
 
     #[ORM\ManyToOne(targetEntity: Categories::class, inversedBy: 'links')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(groups: ['links.read'])]
     private ?Categories $category = null;
 
     #[ORM\ManyToOne(targetEntity: Authors::class, inversedBy: 'links')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(groups: ['links.read'])]
     private ?Authors $author = null;
 
     #[ORM\ManyToMany(targetEntity: Tags::class, inversedBy: 'links')]
+    #[Groups(groups: ['links.read'])]
     private Collection $tags;
 
     #[ORM\ManyToOne(targetEntity: Languages::class, inversedBy: 'links')]
+    #[Groups(groups: ['links.read'])]
     private ?Languages $language = null;
 
     #[ORM\Column(type: 'boolean')]
+    #[Groups(groups: ['links.read'])]
     private ?bool $is_publish = false;
 
     #[ORM\Column(type: 'text', nullable: true)]
+    #[Groups(groups: ['links.read'])]
     private ?string $description = null;
 
     #[ORM\ManyToOne(targetEntity: Users::class, inversedBy: 'links')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(groups: ['links.read'])]
     private ?Users $published_by = null;
 
     public function __construct()
@@ -195,5 +207,25 @@ abstract class Links
         $this->published_by = $published_by;
 
         return $this;
+    }
+
+    private array $english_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    private array $french_days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+
+    private array $english_months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    private array $french_months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+
+    #[Groups(groups: ['links.read'])]
+    public function getPublishedAtLocal(string $format = 'l j F Y'): string
+    {
+        return str_replace(
+            $this->english_months,
+            $this->french_months,
+            str_replace(
+                $this->english_days,
+                $this->french_days,
+                $this->published_at->format($format)
+            )
+        );
     }
 }

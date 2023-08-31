@@ -15,18 +15,18 @@ class Authors
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'AUTO')]
     #[ORM\Column(type: 'integer')]
-    #[Groups(groups: ['show_events'])]
+    #[Groups(groups: ['links.read'])]
     private ?int $id = null;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups(groups: ['show_events'])]
+    #[Groups(groups: ['links.read'])]
     private ?string $title = null;
 
     #[ORM\Column(type: 'text', nullable: true)]
     private ?string $description = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Groups(groups: ['show_events'])]
+    #[Groups(groups: ['links.read'])]
     private ?string $logo = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]

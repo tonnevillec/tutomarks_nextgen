@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tutomarks - Next Gen!{% endblock %}
+
+{% block body %}
+    <div class="h-screen">
+        <div class="mx-7 xl:mx-32 lg:mx-24 mb-24 pt-24">
+            <section>
+                <div class="section-heading style-2 mb-7 w-full mt-10" id="sectionVideos">
+                    <div class="flex flex-row justify-between items-center">
+                        <h1 class="text-3xl mb-2">
+                            <i class="fa-solid fa-magnifying-glass text-secondary mr-3"></i>Rechercher un lien
+                        </h1>
+                    </div>
+
+                    <div class="line"></div>
+                </div>
+
+                <react-search></react-search>
+            </section>
+        </div>
+    </div>
+{% endblock %}

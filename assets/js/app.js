@@ -1,5 +1,7 @@
 require('@fortawesome/fontawesome-free/js/all');
 
+import '../js/react/search/Search';
+
 const jshtml = document.querySelector('html')
 
 const themeSwitcherBtn = document.getElementById('js-theme-switcher')

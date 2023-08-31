@@ -3,13 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity]
 class SimpleLinks extends Links
 {
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Groups(groups: ['links.read'])]
     private ?string $image = null;
 
     #[ORM\Column(type: 'datetime', nullable: true)]
