@@ -17,7 +17,7 @@ class ApiController extends AbstractController
     #[Route('/links', name: 'api.links', methods: ['GET'])]
     public function links(): JsonResponse
     {
-        $links = $this->em->getRepository(Links::class)->findBy(['is_publish' => true], ['published_at' => 'DESC']);
+        $links = $this->em->getRepository(Links::class)->findBy(['is_publish' => true], ['published_at' => 'DESC'], 25);
 
         return $this->json($links, 200, [], ['groups' => ['links.read']]);
     }

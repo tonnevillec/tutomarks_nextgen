@@ -4,7 +4,7 @@ const plugin = require("tailwindcss/plugin")
 module.exports = {
   content: [
     './templates/**/*.html.twig',
-    'assets/js/**/*.js',
+    'assets/js/**/*.{js,jsx}',
   ],
   theme: {
     extend: {},
@@ -32,7 +32,7 @@ module.exports = {
   },
   safelist: [
       'w-8',
-      'group-hover:text-white'
+      'group-hover:text-white',
   ]
 }
 

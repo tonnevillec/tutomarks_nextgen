@@ -38,6 +38,7 @@ class Categories
     private bool $is_actif = false;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Groups(groups: ['links.read'])]
     private ?string $image = null;
 
     #[ORM\Column(type: 'datetime', nullable: true)]
