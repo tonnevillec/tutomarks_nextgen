@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import fetchApi from "../services/fetchApi";
 
-const SelectOption = ({id, name, label, handleChange, selectedValue, endpoint}) => {
+const SelectMultiple = ({id, name, label, handleChange, selectedValue, endpoint}) => {
     const [datas, setDatas] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -24,12 +24,12 @@ const SelectOption = ({id, name, label, handleChange, selectedValue, endpoint}) 
                     name={name}
                     onChange={(e) => handleChange(e)}
                     value={selectedValue}
+                    multiple={true}
                     className="select select-bordered select-sm w-full">
-                <option value=""></option>
                 {!loading && datas.map(data => <option key={data.id} value={data.value}>{data.title}</option>)}
             </select>
         </div>
     );
 };
 
-export default SelectOption;
+export default SelectMultiple;

@@ -26,15 +26,18 @@ const LinkCard = ({tuto, affCard}) => {
 
             <div className="card-footer">
                 <div className="card-actions justify-end">
-                    <div className="badge text-xs badge-accent">NEW</div>
                     <div className="badge text-xs badge-primary">{ tuto.language.shortname }</div>
-                    {/*{% for tag in video.tags %}*/}
-                    {/*<a href="#" className="badge text-xs badge-outline hover:text-secondary transition ease duration-150">{{ tag.title }}</a>*/}
-                    {/*{% endfor %}*/}
+                    {tuto.tags.map(t =>
+                        <button
+                           key={t.id}
+                           className="badge text-xs badge-outline hover:text-secondary transition ease duration-150">
+                            { t.title }
+                        </button>
+                    )}
                 </div>
 
                 <div className="card-actions justify-start text-xs text-neutral-400">
-                    <span>Ajouté par { tuto.publishedBy} le { tuto.publishedAtLocal }</span>
+                    <span>Ajouté par { tuto.published_by.username } le { tuto.publishedAtLocal }</span>
                 </div>
             </div>
         </div>

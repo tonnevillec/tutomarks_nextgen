@@ -14,11 +14,11 @@ class Categories
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'AUTO')]
     #[ORM\Column(type: 'integer')]
-    #[Groups(groups: ['links.read'])]
+    #[Groups(groups: ['links.read', 'categories.read'])]
     private ?int $id = null;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups(groups: ['links.read'])]
+    #[Groups(groups: ['links.read', 'categories.read'])]
     private ?string $title = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
@@ -31,21 +31,21 @@ class Categories
     private ?string $link_entity = null;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups(groups: ['links.read'])]
+    #[Groups(groups: ['links.read', 'categories.read'])]
     private ?string $code = null;
 
     #[ORM\Column(type: 'boolean', nullable: true)]
     private bool $is_actif = false;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Groups(groups: ['links.read'])]
+    #[Groups(groups: ['links.read', 'categories.read'])]
     private ?string $image = null;
 
     #[ORM\Column(type: 'datetime', nullable: true)]
     private ?\DateTimeInterface $updatedAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'categories')]
-    #[Groups(groups: ['links.read'])]
+    #[Groups(groups: ['links.read', 'categories.read'])]
     private ?CodeCategories $codeCategory = null;
 
     public function __construct()

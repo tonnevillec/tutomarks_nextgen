@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Entity\CodeCategories;
+use App\Entity\Languages;
 use App\Entity\Links;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,7 +18,7 @@ class ApiController extends AbstractController
     #[Route('/links', name: 'api.links', methods: ['GET'])]
     public function links(): JsonResponse
     {
-        $links = $this->em->getRepository(Links::class)->findBy(['is_publish' => true], ['published_at' => 'DESC'], 25);
+        $links = $this->em->getRepository(Links::class)->findBy(['is_publish' => true], ['published_at' => 'DESC']);
 
         return $this->json($links, 200, [], ['groups' => ['links.read']]);
     }
@@ -29,7 +30,15 @@ class ApiController extends AbstractController
 
         return $this->json($categories, 200, [], ['groups' => ['categories.read']]);
     }
-//
+
+    #[Route('/languages', name: 'api.languages', methods: ['GET'])]
+    public function languages(): JsonResponse
+    {
+        $languages = $this->em->getRepository(Languages::class)->findBy([], ['name' => 'ASC']);
+
+        return $this->json($languages, 200, [], ['groups' => ['languages.read']]);
+    }
+
 //    #[Route('/brands', name: 'api.brands', methods: ['GET'])]
 //    public function brands(): JsonResponse
 //    {

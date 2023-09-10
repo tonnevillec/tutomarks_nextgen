@@ -15,18 +15,19 @@ class Languages
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'AUTO')]
     #[ORM\Column(type: 'integer')]
+    #[Groups(groups: ['links.read', 'languages.read'])]
     private ?int $id = null;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups(groups: ['links.read'])]
+    #[Groups(groups: ['links.read', 'languages.read'])]
     private ?string $name = null;
 
     #[ORM\Column(type: 'string', length: 3, nullable: true)]
-    #[Groups(groups: ['links.read'])]
+    #[Groups(groups: ['links.read', 'languages.read'])]
     private ?string $shortname = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Groups(groups: ['links.read'])]
+    #[Groups(groups: ['links.read', 'languages.read'])]
     private ?string $logo = null;
 
     #[ORM\OneToMany(mappedBy: 'language', targetEntity: Links::class)]
@@ -107,5 +108,17 @@ class Languages
     public function __toString(): string
     {
         return (string) $this->getName();
+    }
+
+    #[Groups(groups: ['languages.read'])]
+    public function getTitle(): string
+    {
+        return $this->name;
+    }
+
+    #[Groups(groups: ['languages.read'])]
+    public function getValue(): string
+    {
+        return $this->shortname;
     }
 }
