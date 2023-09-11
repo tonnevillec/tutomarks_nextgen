@@ -14,22 +14,27 @@
 
             <p class="mb-5">Bienvenue sur <span class="text-2xl group"><span class="bg-secondary group-hover:bg-primary text-white transform p-1 -skew-y-6 inline-flex"><a href="#" class="transform skew-y-6">Tuto</a></span><span class="bg-primary group-hover:bg-secondary text-white transform p-1 -skew-y-6 inline-flex"><a href="#" class="transform skew-y-6">marks</a></span></span></p>
 
-            <div class="join w-[50%]">
-                <div class="w-[95%]">
-                    <div>
-                        <input class="input input-bordered rounded-tl-box rounded-bl-box join-item input-sm w-full"
-                               id="fsearch"
-                               placeholder="Que cherchez-vous ?"
-                        />
-                        <label for="fsearch" aria-hidden="true" class="hidden">Rechercher</label>
+            <form name="f_search" method="post" action="{{ path('app_search') }}">
+                <div class="join w-[50%]">
+                    <div class="w-[95%]">
+                        <div>
+                            <input class="input input-bordered rounded-tl-box rounded-bl-box join-item input-sm w-full"
+                                   id="fsearch"
+                                   name="search"
+                                   placeholder="Que cherchez-vous ?"
+                            />
+                            <label for="fsearch" aria-hidden="true" class="hidden">Rechercher</label>
+                        </div>
+                    </div>
+                    <div class="w-[5%]">
+                        <button class="btn join-item btn-sm rounded-r-full bg-secondary hover:bg-primary text-white"
+                                type="submit"
+                        >
+                            <i class="fa-solid fa-rocket mr-1"></i>
+                        </button>
                     </div>
                 </div>
-                <div class="w-[5%]">
-                    <button class="btn join-item btn-sm rounded-r-full bg-secondary hover:bg-primary text-white">
-                        <i class="fa-solid fa-rocket mr-1"></i>
-                    </button>
-                </div>
-            </div>
+            </form>
         </div>
 
         <div class="flex basis-1/2 w-full justify-center">
@@ -278,12 +283,17 @@
                     <p class="text-sm">
                         <a href="#" class="hover:text-secondary">{{ ressource.author.title }}</a>
                     </p>
-                    <div class="card-actions justify-end">
-                        <div class="badge text-xs badge-ghost">{{ ressource.category.title }}</div>
-                        <div class="badge text-xs badge-primary">{{ ressource.language.shortname }}</div>
-                        {% for tag in ressource.tags %}
-                            <div class="badge text-xs badge-outline">{{ tag.title }}</div>
-                        {% endfor %}
+
+                    <div class="card-actions flex flex-row justify-between">
+                        <div>
+                            <div class="badge text-xs badge-ghost">{{ ressource.category.title }}</div>
+                            <div class="badge text-xs badge-primary">{{ ressource.language.shortname }}</div>
+                            {% for tag in ressource.tags %}
+                                <div class="badge text-xs badge-outline">{{ tag.title }}</div>
+                            {% endfor %}
+                        </div>
+
+                        <span class="text-xs text-neutral-400">Ajouté par {{ ressource.publishedBy }} le {{ ressource.publishedAt|date('d/m/Y') }}</span>
                     </div>
                 </div>
             </div>

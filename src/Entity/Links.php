@@ -187,7 +187,7 @@ abstract class Links
 
     public function getDescription(): ?string
     {
-        return $this->description;
+        return is_null($this->description) ? '' : $this->description;
     }
 
     public function setDescription(?string $description): self

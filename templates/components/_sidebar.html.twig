@@ -1,54 +1,56 @@
-<div class="menu p-4 w-80 pt-28 bg-base-200 text-base-content">
-    <ul class="text-md">
-        <!-- Sidebar content here -->
-        <li>
-            <a href="{{ path('app_home') }}" class="hover:bg-secondary hover:text-white text-neutral-500">Accueil</a>
-        </li>
-        {% for cat in codeCategories() %}
+<div class="h-screen">
+    <div class="menu p-4 w-80 pt-28 bg-base-200 text-base-content min-h-full">
+        <ul class="text-md">
+            <!-- Sidebar content here -->
             <li>
-                <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">{{ cat.title }}</a>
+                <a href="{{ path('app_home') }}" class="hover:bg-secondary hover:text-white text-neutral-500">Accueil</a>
             </li>
-        {% endfor %}
-        <li>
-            <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Evenements</a>
-        </li>
-        <li>
-            <a href="{{ path('app_search') }}" class="hover:bg-secondary hover:text-white text-neutral-500">Recherche</a>
-        </li>
-        <li>
-            <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Quoi de neuf les devs ?</a>
-        </li>
-    </ul>
-
-    <span class="mt-6 text-xl text-neutral-600 mb-2">Créateurs</span>
-    <ul class="text-md">
-        {{ menuAuthors() }}
-        <li>
-            <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Tous les créateurs</a>
-        </li>
-    </ul>
-
-    <span class="mt-6 text-xl text-neutral-600 mb-2">Profil</span>
-    <ul class="text-md">
-        {% if app.user %}
-            <li>
-                <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Mon compte</a>
-            </li>
-            <li>
-                <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Mes contributions</a>
-            </li>
-            <li>
-                <a href="{{ path('app_logout') }}" class="hover:bg-secondary hover:text-white text-neutral-500">Déconnexion</a>
-            </li>
-            {% if is_granted('ROLE_ADMIN') %}
+            {% for cat in codeCategories() %}
                 <li>
-                    <a href="{{ path('admin') }}" class="hover:bg-secondary hover:text-white text-accent">Administration</a>
+                    <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">{{ cat.title }}</a>
+                </li>
+            {% endfor %}
+            <li>
+                <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Evenements</a>
+            </li>
+            <li>
+                <a href="{{ path('app_search') }}" class="hover:bg-secondary hover:text-white text-neutral-500">Recherche</a>
+            </li>
+            <li>
+                <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Quoi de neuf les devs ?</a>
+            </li>
+        </ul>
+
+        <span class="mt-6 text-xl text-neutral-600 mb-2">Créateurs</span>
+        <ul class="text-md">
+            {{ menuAuthors() }}
+            <li>
+                <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Tous les créateurs</a>
+            </li>
+        </ul>
+
+        <span class="mt-6 text-xl text-neutral-600 mb-2">Profil</span>
+        <ul class="text-md">
+            {% if app.user %}
+                <li>
+                    <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Mon compte</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:bg-secondary hover:text-white text-neutral-500">Mes contributions</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_logout') }}" class="hover:bg-secondary hover:text-white text-neutral-500">Déconnexion</a>
+                </li>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li>
+                        <a href="{{ path('admin') }}" class="hover:bg-secondary hover:text-white text-accent">Administration</a>
+                    </li>
+                {% endif %}
+            {% else %}
+                <li>
+                    <a href="{{ path('app_login') }}" class="hover:bg-secondary hover:text-white text-neutral-500">Connexion</a>
                 </li>
             {% endif %}
-        {% else %}
-            <li>
-                <a href="{{ path('app_login') }}" class="hover:bg-secondary hover:text-white text-neutral-500">Connexion</a>
-            </li>
-        {% endif %}
-    </ul>
+        </ul>
+    </div>
 </div>

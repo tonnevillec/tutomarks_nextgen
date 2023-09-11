@@ -6,13 +6,13 @@ import LinkCard from "../components/LinkCard";
 import SelectOption from "../components/SelectOption";
 import Pagination from "../components/Pagination";
 
-const Search = () => {
+const Search = ({searchWord}) => {
     const [datas, setDatas] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const [affCard, setAffCard] = useState(true);
     const [filteredDatas, setFilteredDatas] = useState([]);
-    const [search, setSearch] = useState({word: '', category: '', tags: '', author: '', language: ''});
+    const [search, setSearch] = useState({word: searchWord, category: '', tags: '', author: '', language: ''});
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setitemsPerPage] = useState(parseInt('25'))
 
@@ -42,7 +42,15 @@ const Search = () => {
         try{
             const tutos = await fetchApi.getTutos();
             setDatas(tutos);
-            setFilteredDatas(tutos);
+
+            setFilteredDatas(tutos.filter(
+                r =>
+                    (
+                        r.title.toString().toLowerCase().includes(search.word.toLowerCase())
+                        ||
+                        r.description.toString().toLowerCase().includes(search.word.toLowerCase())
+                    )
+            ));
 
             setLoading(false);
         } catch( error ) {
@@ -104,18 +112,9 @@ const Search = () => {
                     name={'language'}
                     label={'Langue'}
                     handleChange={handleChange}
-                    selectedValue={search.language.shortname}
+                    selectedValue={search.language}
                     endpoint={'languages'}
                 ></SelectOption>
-
-                {/*<SelectMultiple*/}
-                {/*    id={'f_language'}*/}
-                {/*    name={'language'}*/}
-                {/*    label={'Langue'}*/}
-                {/*    handleChange={handleChange}*/}
-                {/*    selectedValue={search.language}*/}
-                {/*    endpoint={'languages'}*/}
-                {/*></SelectMultiple>*/}
 
                 <div className="form-control w-full">
                     <label className="label" htmlFor="f_search">
@@ -130,7 +129,6 @@ const Search = () => {
                            className="input input-bordered input-sm w-full"
                     />
                 </div>
-
 
                 <button className="btn btn-ghost btn-xs mt-3" onClick={handleReset}>Réinitialiser</button>
             </div>
@@ -177,8 +175,9 @@ const Search = () => {
 
 class SearchElement extends HTMLElement {
     connectedCallback () {
+        const searchWord = this.dataset.search
         const root = createRoot(this);
-        root.render(<Search />);
+        root.render(<Search searchWord={searchWord} />);
     }
 }
 

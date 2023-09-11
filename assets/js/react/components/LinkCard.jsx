@@ -3,10 +3,20 @@ import React from 'react';
 const LinkCard = ({tuto, affCard}) => {
 
     return (
-        <div className="card bg-base-100 shadow-md w-full" data-theme="tutomarks">
-            <a href={ tuto.url } target="_blank" className="w-full inline-block cursor-pointer overflow-hidden rounded-tl-box rounded-tr-box">
+        <div className={affCard ?
+                "card bg-base-100 shadow-md"
+                : "card bg-base-100 shadow-md card-side w-full"}
+             data-theme="tutomarks">
+            <a href={ tuto.url }
+               target="_blank"
+               className={affCard ?
+                   "rounded-tl-box rounded-tr-box w-full inline-block cursor-pointer overflow-hidden"
+                   : "rounded-tl-box rounded-bl-box max-w-[20%] w-full inline-block cursor-pointer overflow-hidden"}
+            >
                 <img src={ tuto.img_large ? tuto.img_large : tuto.image ? `/uploads/images/${tuto.image}` : `/uploads/images/${tuto.category.image}` }
-                     className="rounded-tl-box rounded-tr-box hover:scale-125 transition duration-500 w-full h-auto"
+                     className={affCard ?
+                         "rounded-tl-box rounded-tr-box hover:scale-125 transition duration-500 w-full h-auto"
+                         : "rounded-tl-box rounded-bl-box hover:scale-125 transition duration-500 w-full h-auto"}
                      alt={ tuto.title }
                 />
             </a>

@@ -25,8 +25,8 @@ const Pagination = ({currentPage, itemsPerPage, length, onPageChanged, size}) =>
     }
 
     return (
-        <div className="max-w-2xl mx-auto mt-5">
-            <nav aria-label="Page navigation example">
+        <div className="w-full text-center mt-5">
+            <nav aria-label="Pagination">
                 <ul className="inline-flex -space-x-px">
                     <li>
                         {currentPage === 1 ?
