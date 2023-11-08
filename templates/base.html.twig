@@ -13,6 +13,13 @@
         {% endblock %}
     </head>
     <body class="relative">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <toast-component data-message="{{ message|capitalize }}" data-label="{{ label }}"></toast-component>
+            {% endfor %}
+        {% endfor %}
+
+        <toast-component data-message="YES ca marche !"></toast-component>
         <div class="drawer">
             <input id="my-drawer" type="checkbox" class="drawer-toggle" />
 

@@ -1,6 +1,7 @@
 require('@fortawesome/fontawesome-free/js/all');
 
 import '../js/react/search/Search';
+import '../js/react/Toaster';
 
 const jshtml = document.querySelector('html')
 
